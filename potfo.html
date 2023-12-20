@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY PORTFOLIO</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html{
+            scroll-behavior: smooth;
+        }
+        body{
+            background-color: black;
+
+            color:white;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+        nav{
+            display:flex;
+            justify-content: space-around;
+            align-items: center;
+            height:70px;
+            background-color: rgb(90, 101, 223);
+        }
+        nav ul{
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li{
+            list-style: none;
+            margin: 0 23px;
+            font-size: 25px;
+        }
+        nav ul li a{
+            text-decoration: none;
+            color: wheat;
+        }
+        nav ul li a:hover{
+           color:rgb(82, 82, 132);
+           font-size: 1.2rem;
+           
+        }
+        .left{
+              font-size: 1.9rem;
+        }
+        .firstSection{
+            display:flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 80px 0;
+        }
+        .firstSection > div{
+            width: 30%;
+           
+        }
+        .leftSection{
+           font-size: 3rem;
+        }
+        .leftSection .buttons{
+            padding:23px;
+        }
+        .leftSection .btnn{
+            padding: 12px;
+            background-color: rgb(174, 93, 250);
+            color: white;
+            border: 2px solid white;
+            border-radius: 6px;
+            font-size: 20px;
+            cursor: pointer;
+            text-decoration: none;
+            
+         }
+         .leftSection .btnn:hover{
+            background: #ff004f;
+         }
+        .rightSection img{
+            width: 80%;
+            margin: 50px 0;
+           
+        }
+        .purple{
+            color: blueviolet;
+        }
+        .text-grey{
+            color:grey;
+        }
+        #element{
+            color: blueviolet;
+        }
+        .secondSection{
+           max-width: 80vw;
+           margin: auto;
+           height: 55vh;;
+
+           
+        }
+        .secondSection h1{
+            font-size: 1.9rem;
+        }
+        main hr{
+            border: 0;
+            background: #9c97f1;
+            height: 1.2px;
+            margin: 60px 84px;
+        }
+        .secondSection .box{
+            background: white;
+            width: 80vm;
+            height: 2px;
+            margin:56px 0;
+            display: flex;
+        }
+        .secondSection .vertical{
+            height: 93px;
+            width:1px;
+            background-color: white;
+            margin: 0 100px;
+
+        }
+        .image-top{
+            width: 35px;
+            position: relative;
+            top: -32px;
+            left:-9px;
+        }
+        .vertical-title{
+         position:relative;
+         top: 75px;
+         width:150 px;
+         font-size: 22px;
+
+        }
+        .vertical-desc{
+         position:relative;
+         top:86px;
+         width: 150px;
+         font-size: 13px;
+        }
+        footer{
+            background-color:#4f49c6 ;
+            height: 123px;
+        }
+        .footer{
+            display: flex;
+            padding: 23px  122px ;
+            justify-content: space-evenly;
+        }
+        .footer ul{
+            list-style: none;
+        }
+        .footer > div{
+            width:223px;
+        }
+        footer .footer-rights{
+            text-align: center;
+            color: gray;
+            padding: 12px 0;
+        }
+        #about{
+            padding: 80px  0;
+            color: rgb(207, 205, 205);
+            font-size: 25px;
+        }
+        .row{
+            display:flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        /* #crs{
+        height: 250px;
+        width:250px;
+       } */
+       .about-col-1{
+        flex-basis: 35%;
+       }
+       .about-col-1 img{
+         width: 100%;
+         border-radius: 15px;
+       }
+       .about-col-2{
+           flex-basis: 60%;
+       }
+       .sub-title{
+        font-size: 70px;
+        font-weight: 600;
+        color: white;
+       }  
+       .sub-title{
+        text-align: center;
+       }
+       .sub-title :hover{
+        background-color: #ff004f;
+       }
+       .tab-titles{
+        display: flex;
+        margin: 20px 0 40px;
+
+       }
+       .tab-links{
+        margin-right: 50px;
+        font-size: 35px;
+        font-weight: 500;
+        cursor: pointer;
+        position: relative;
+       }
+       .tab-links::after{
+          content: '';
+          width: 0;
+          height: 3px;
+          background: #ff004f;
+          position: absolute;
+          left:0;
+          bottom: -8px;
+          transition: 0.5s;
+       }
+       .tab-links.active-link::after{
+        width: 50%;
+       }
+       .tab-contents ul li{
+         list-style: none;
+         margin: 10px 0;
+       }
+       .tab-contents ul li span{
+        color: #b54769;
+        font-size: 25px;
+       }
+       .tab-contents{
+        display:none;
+       }
+       .tab-contents.active-tab{
+        display: block;
+       }
+       #services{
+        padding: 30px 0;
+       }
+       .services-list{
+        display:grid;
+        grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+        grid-gap: 40px;
+        margin-top: 50px;
+       }
+       .services-list div{
+        background:#262626;
+        padding: 40px ;
+        font-size: 19px;
+        font-weight: 300;
+        border-radius: 10px;
+        transition: background 0.5s,transform 0.5s;;
+       }
+       .services-list div i{
+        font-size: 50px;
+        margin-bottom: 30px;
+       }
+       .services-list div h2{
+        font-size: 30px;
+        font-weight: 500;
+        margin-bottom: 15px;
+       }
+       .services-list div a{
+        text-decoration: none;
+        color:white;
+        font-size: 12px;
+        margin-top:20px;
+        display:inline-block;
+       }
+       .services-list div:hover{
+        background: #ff004f;
+        transform: translateY(-10px);
+       }
+       #portfolio{
+        padding :50px 0;
+       }
+       .work-list{
+        display:grid;
+        grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+        grid-gap: 40px;
+        margin-top: 50px;
+       }
+       .work{
+        border-radius: 10px;
+        position: relative;
+        overflow: hidden;
+       }
+       .work img{
+        width: 100%;
+        border-radius: 10px;
+        display: block;
+        transition: transform 0.5s;
+       }
+       .layer{
+        /* width: 100%; */
+        height: 0;
+        background: linear-gradient(rgba(0,0,0,0.6),#ff004f);
+        border-radius: 10px;
+        position:absolute;
+        left:0;
+        bottom: 0;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 40px;
+        text-align: center;
+        font-size: 14px;
+        transition: height 0.5s;
+       }
+       .layer h3{
+        font-weight: 600;
+        margin-bottom: 20px;
+       }
+       .layer a{
+        margin-top: 20px;
+        color: #ff004f;
+        text-decoration: none;
+        font-size: 18px;
+        line-height: 60px;
+        background: #fff;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        text-align: center;
+       }
+       .work:hover img{
+             transform: scale(1.1);
+       }
+       .work:hover .layer{
+        height: 100%;
+       }
+       .btn{
+        display: block;
+        margin: 50px auto;
+        width: fit-content;
+        border: 1px solid #ff004f;
+        padding: 14px 50px;
+        border-radius: 6px;
+        text-decoration: none;
+        color: #fff;
+        transition: background 0.5s;
+        background-color: #262626;
+       }
+       .btn:hover{
+        background: #ff004f;
+       }
+       .contact-left{
+        flex-basis: 35%;
+          margin-left: 25px;
+       }
+       .contact-right{
+          flex-basis: 60%;
+       }
+       .contact-left p{
+        margin-top: 30px;
+        text-align: center;
+       }
+       .contact-left p i{
+        color: #ff004f;
+        margin-right: 15px;
+        font-size: 25px;
+       }
+       .social-icons{
+        margin-top: 30px;
+      text-align: center;
+       }
+       .social-icons a{
+        text-decoration: none;
+        font-size: 60px;
+        margin-right: 15px;
+        color: #ababab;
+        display: inline-block;
+        transition: transform 0.5s;
+       }
+       .social-icons a:hover{
+        color: #ff004f;
+        transform: translateY(-5px);
+       }
+       btn btn2{
+        display: inline-block;
+        background: #ff004f;
+        color: #9c97f1;
+       }
+       .contact-right form{
+        width: 90%;
+
+       }
+       form input,form textarea{
+        width: 100%;
+        border: 0;
+        outline: none;
+        background: #262626;
+        padding: 15px;
+        margin: 15px 0;
+        color: #fff;
+        font-size: 18px;
+        border-radius: 6px;
+       }
+       form .btn2{
+        padding: 14px 60px;
+        font-size: 18px;
+        margin-top: 20px;
+        cursor: pointer;
+       }
+       .copyright h3{
+        text-align: center;
+        color: gray;
+       }
+       .copyright h3 span{
+        color: #ff004f;
+       }
+
+    </style>
+    <script src="https://kit.fontawesome.com/ee8db0f280.js" crossorigin="anonymous"></script>
+</head>
+<body>
+   
+    <header>
+        <nav>
+            <div class ="left"><i class="fa-solid fa-network-wired"></i>  Syed Mohammad</div>
+            <div class="right">
+                <ul>
+                   <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Skills</a></li>
+                   <li><a href="#portfolio"> Projects</a></li>
+                   <li><a href="#contact"> Contact</a></li>
+                </ul>
+                </div>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="firstSection">
+            <div class="leftSection">Hi I Am  <span class="purple">Syed Mohammad </span>
+                <span>Computer Science Engineering Student</span>
+            <!-- <div>and i am a </div> -->
+            <span id="element"></span>
+            <div class="buttons">
+                <!-- <button class="btnn" href="1.pdf">Download Resume</button>
+                <button class="btnn"href="https://github.com/">Visit Github</button> -->
+                <a  href="1.pdf" download class="btnn">Download Resume</a>
+                <a class="btnn"href="https://github.com/">Visit Github</a>
+            </div>
+            </div>
+            <div class="rightSection"><img src="proj.jpg"></div>
+
+
+        </section>
+        <hr>
+        <section class="secondSection">
+            <!-- <span class="text-grey">What I have done so far</span> -->
+            <h1>Skill Timeline</h1>
+            <div class="box">
+             <div class="vertical">
+                <img class="image-top" src="download1.jpeg" alt="">
+                <div class="vertical-title">
+                      PYTHON
+                </div>
+                <!-- <div class="vertical-desc">
+                     I Have started my skills journey by learning python,then it module like pandas and numpy.
+                
+                </div> -->
+                </div>
+                <div class="vertical">
+                    <img class="image-top" src="download2.png" alt="">
+                    <div class="vertical-title">
+                        WEB SCRAPPING USING SELENIUM AND BEAUTIFULSOUP
+                    </div>
+                    <!-- <div class="vertical-desc">
+                       I Have learn how to scrape data from the website like amazon,flipkart etc,using beautiful soup and selenium,i have use this scrape data for the sentimental analysis.
+                       i have made two project in it scrapping data from flipkarand scrapping image.
+                    
+                    </div> -->
+                    </div>
+                    <div class="vertical">
+                        <img class="image-top" src="download3.png" alt="">
+                        <div class="vertical-title">
+                            DATA ANALYSIS USING PANDAS
+                        </div>
+                        <!-- <div class="vertical-desc">
+                            i have learn how to analyse the data using pandas and make a report using pandas profiling,and making graphs using mathplotlib.
+                        
+                        </div> -->
+                        </div>
+                        <div class="vertical">
+                            <img class="image-top" src="download4.jpeg" alt="">
+                            <div class="vertical-title">
+                                MYSOL,MOGODB ATLAS,
+                                CASANDRA
+                            </div>
+                            <!-- <div class="vertical-desc">
+                               i have learn this technology to store  the analysed data.
+                            </div> -->
+                            </div>
+                            <div class="vertical">
+                                <img class="image-top" src="download5.png" alt="">
+                                <div class="vertical-title">
+                                    MACHINE LEARNING
+                                </div>
+                                <!-- <div class="vertical-desc">
+                                    I Have learn many algorithm of machine learning like linear regression,logestic regression,
+                                    k nearest means,dession tree,random forest ect.
+                                
+                                </div> -->
+                                </div>
+                                <div class="vertical">
+                                    <img class="image-top" src="download6.jpeg" alt="">
+                                    <div class="vertical-title">
+                                        DEEP LEARNING
+                                    </div>
+                                    <!-- <div class="vertical-desc">
+                                        In deeplearning i have learned about Artificial neural network.
+                                        curently i am learning about convolutional neural network.
+                                    </div> -->
+                                    </div>
+        </section>
+    </main>
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img id ="crs"src="C:\Users\syed mohammad\Desktop\project1(tran)\proj.jpg" >
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me </h1>
+                    <p>
+                        Hello! I'm Syed Mohammad, currently pursuing a Bachelor's in Engineering at Cambridge Institute of Technology's North Campus.
+                        
+                       
+                        Ever since I can remember, I've been fascinated by the intricacies of how things work. Engineering isn't just a field of study for me; it's a passion that drives my curiosity and fuels my desire to innovate.
+                        
+                       
+                        Throughout my academic journey, I've delved into challenging coursework and engaging projects that have expanded my understanding of engineering principles. From 2020 to 2022, I've embraced the opportunities to grow and learn.
+                        
+                       
+                        I've honed my skills in Machine Learning and have a knack for Data Analysis.
+                        
+                       
+                        My aim is to build the AI Model that will help the human beings. 
+                        
+                     </p>
+                        <div class="tab-titles">
+                           <!-- <p class="tab-links active-link"onclick="opentab('skills')">Skills</p>  -->
+                           <p class="tab-links"onclick="opentab('experience')">Experience</p> 
+                           <p class="tab-links"onclick="opentab('Education')">Education</p> 
+                        </div>
+                        <!-- <div class="tab-contents active-tab"id="skills">
+                            <ul>
+                                <li><span>UI/UX</span><br>Designing Web/App Interfaces</li>
+                                <li><span>Python Developer</span><br>data analysis</li>
+                                <li><span>model development</span><br>Bulding Data Set Models</li>
+                            </ul>
+                        </div> -->
+                        <div class="tab-contents"id="experience">
+                            <ul>
+                                <li><span>2022-2023</span><br>Learning Deep Learning And Machine Learning</li>
+                                <li><span>2021-2022</span><br>Learning Data Analysis Tool Like Pandas Matplotlib etc</li>
+                                <li><span>2020-2021</span><br>Python Developer</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents"id="Education">
+                            <ul>
+                                <li><span>2021-2025</span><br>BE-From Cambridge Institute Of Technology</li>
+                                <li><span>2018-2020</span><br>Completed 12th From Nezamia Public School</li>
+                                <li><span>2017-2018</span><br>Completed Boards From Don Bosco Academy School(ICSE)</li>
+                            </ul>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  <!-- ----------------------Services--------------------------    -->
+  <div id="services">
+    <div class="container">
+        <h1 class="sub-title">Skills</h1>
+        <div class="services-list">
+          <div>
+            <i class="fa-solid fa-code"></i>
+            <h2>Web Scrapping</h2>
+            <p>
+                Web scraping involves automatically extracting data from websites. It's done by using scripts or tools to navigate web page HTML structures and gather specific information for various purposes like market research, price monitoring, or content aggregation. Ethical considerations and compliance with website terms of service and legal regulations are crucial when scraping data.</p>
+            <a href="#">Learn more</a>
+          </div>
+          <div>
+            <i class="fa-solid fa-magnifying-glass-chart"></i>
+            <h2>Data Analysis</h2>
+            <p>
+                Data analysis refers to the process of examining, cleaning, transforming, and interpreting data to uncover insights, trends, and patterns. It involves using various statistical and analytical techniques to make sense of data, derive meaningful conclusions, and support decision-making. Ethical handling of data and ensuring its accuracy are vital aspects of effective data analysis.</p>
+            <a href="#">Learn more</a>
+          </div>
+          <div>
+            <i class="fa-solid fa-database"></i>
+            <h2>Model Building </h2>
+            <p>
+                Building a model in data science involves using algorithms and statistical techniques to create predictive or descriptive models from data. It includes steps like data preprocessing, feature selection, choosing an appropriate model, training it on available data, and evaluating its performance. The aim is to develop a model that can make accurate predictions or uncover patterns within the dataset. Ethical considerations, model validation, and selecting the right evaluation metrics are important aspects when building models in data science.</p>
+            <a href="#">Learn more</a>
+          </div>
+        </div>
+    </div>
+  </div>
+  <!-- ---------------------------portifilio------------------------------------- -->
+  <div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">Project</h1>
+         <div class="work-list">
+            <div class="work">
+                <img src="work1.png">
+                <div class="layer">
+                    <h3>
+                        Web Scrapping
+                    </h3>
+                    <p>
+                        Web scraping is the process of extracting data from websites. It involves using automated tools or scripts to gather information from web pages by accessing their HTML code and extracting the relevant data. </p>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="work2.jpeg">
+                <div class="layer">
+                    <h3>
+                        data analysis
+                    </h3>
+                    <p>
+                        A data analysis dashboard is a visual tool that consolidates key metrics and data from various sources into a single interface. It provides a snapshot view of critical information using charts, graphs, and tables, enabling users to monitor trends, identify patterns, and make informed decisions swiftly.</p>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="work3.jpeg">
+                <div class="layer">
+                    <h3>
+                        Cnn face detection
+                    </h3>
+                    <p>
+                        CNN face detection employs Convolutional Neural Networks (CNNs) to recognize and locate faces within images or videos by analyzing patterns and features. Through training on vast datasets, CNNs learn to detect facial features, enabling accurate identification and localization of faces within visual content.</p>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+         </div>
+    </div>
+    <a href="#" class="btn">See more</a>
+  </div>
+  <!----------------------------- content ------------------------------------>
+  <div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-envelope"></i>syed@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i>8889999888</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.linkedin.com/in/syed-mohammad-8919ba234?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://github.com/"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+            <div class="contact-right">
+                <form>
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+  </div>
+    <!-- <footer>
+        <!-- <div class="footer"> -->
+            <!-- <div class="footer-first">
+                <h3>Syed,s developer portfolio</h3>
+            </div>
+            <div class="footer-second">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Services</li>
+                    <li>Contact</li>
+                    
+                </ul>
+            </div>
+            <div class="footer-third">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Services</li>
+                    <li>Contact</li>
+                    
+                </ul>
+            </div>
+            <div class="footer-fourth">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Services</li>
+                    <li>Contact</li>
+                    
+                </ul>
+            </div>
+        </div> -->
+        <!-- <div class="footer-rights">
+            Copyright &#169: SyedsP.com |  All rights reserved
+        </div>
+    </footer> -->
+    <div class="copyright">
+        <h3 >Copyright <span>&#169</span>: Syed Mohammad.com |  All rights reserved</h3>
+    </div>
+    
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <!-- <script>
+        var typed = new Typed('#element', {
+          strings: ['web developer ', 'web scrapper'],
+          typeSpeed: 50,
+        });
+       
+      </script> -->
+      <script>
+         var tablinks=document.getElementsByClassName("tab-links");
+        var tabcontents=document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+
+        }
+      </script>
+
+</body>
+</html>
